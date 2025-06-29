@@ -1,0 +1,37 @@
+{
+    "name": "rndwiga/deriv_apis",
+    "description": "Deriv Websocket API SDK",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "phrity/websocket": "^3.5"
+    },
+    "require-dev": {
+        "pestphp/pest": "3.x-dev",
+        "mockery/mockery": "2.0.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rndwiga\\DerivApis\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raphael Ndwiga",
+            "email": "raphael@raphaelndwiga.africa"
+        }
+    ],
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
