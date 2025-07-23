@@ -56,6 +56,38 @@ class DerivClient
     }
 
     /**
+     * Set or update the authentication token
+     *
+     * @param string|null $token API token for authenticated requests
+     * @return void
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+    }
+
+    /**
+     * Get the current token
+     *
+     * @return string|null
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * Check if a token is currently set
+     *
+     * @return bool
+     */
+    public function hasToken()
+    {
+        return !empty($this->token);
+    }
+
+
+    /**
      * Connect to the WebSocket server
      * 
      * @return void

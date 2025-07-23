@@ -98,16 +98,28 @@ class Utilities extends BaseApi
     /**
      * Verify email
      *
-     * @param string $email Email address
-     * @param string $type Verification type
-     * @return array
+     * @param string $email Email address to verify
+     * @param string $type Verification type (e.g., 'account_opening', 'reset_password', 'payment_withdraw', etc.)
+     * @param array $additionalParams Additional parameters (optional)
+     *     @type string $url_parameters Custom URL parameters for the verification link
+     *     @type string $redirect_to URL to redirect to after verification (only for certain types)
+     *     @type int $send_to_device Send verification link to client's device (1 or 0)
+     * @return array Response from the API
      */
-    public function verifyEmail($email, $type)
+
+    public function verifyEmail($email, $type, array $additionalParams = [])
     {
-        return $this->sendRequest([
+        $params = [
             'verify_email' => $email,
             'type' => $type
-        ]);
+        ];
+
+        // Merge additional parameters if provided
+        if (!empty($additionalParams)) {
+            $params = array_merge($params, $additionalParams);
+        }
+
+        return $this->sendRequest($params);
     }
 
     /**

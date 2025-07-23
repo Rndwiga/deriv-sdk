@@ -123,6 +123,38 @@ class DerivAPI
     }
 
     /**
+     * Set or update the authentication token
+     *
+     * @param string $token API token for authenticated requests
+     * @return void
+     */
+    public function setToken($token)
+    {
+        $this->client->setToken($token);
+    }
+
+    /**
+     * Clear the authentication token
+     *
+     * @return void
+     */
+    public function clearToken()
+    {
+        $this->client->setToken(null);
+    }
+
+    /**
+     * Check if a token is currently set
+     *
+     * @return bool
+     */
+    public function hasToken()
+    {
+        return $this->client->hasToken();
+    }
+
+
+    /**
      * Get the Account API handler
      *
      * @return Account

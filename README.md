@@ -331,6 +331,7 @@ For an example, see the [Account API tests](tests/Api/AccountTest.php).
 
 - [Deriv API Documentation](https://developers.deriv.com/docs)
 - [Deriv API Playground](https://api.deriv.com/api-explorer)
+- [Package Architecture Guide](docs/package-architecture-guide.md) - Learn about the architecture and design patterns used in this package
 
 ## License
 
