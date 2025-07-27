@@ -62,16 +62,15 @@ class Account extends BaseApi
     /**
      * Get account balance
      *
-     * @param string|null $account Account type (optional)
+     * @param int|null $subscribe Get update whenever balance changes (optional)
      * @return array
      */
-    public function getBalance($account = null)
+    public function getBalance(int|null $subscribe = null)
     {
         $params = ['balance' => 1];
         
-        if ($account) {
-            $account_options = ['current','all'];//or account Id
-            $params['account'] = $account;
+        if ($subscribe) {
+            $params['subscribe'] = 1;
         }
         
         return $this->sendRequest($params);
